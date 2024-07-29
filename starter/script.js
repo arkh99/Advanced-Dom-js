@@ -7,6 +7,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const header = document.querySelector(".header")
 
 const openModal = function (e) {
   e.preventDefault();
@@ -31,3 +32,20 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+const allSections = document.querySelectorAll(".section");
+document.getElementById("sectio--1")
+const allButtons = document.getElementsByTagName("button")
+
+const message = document.createElement("div");
+message.classList.add("cookie-message");
+message.innerHTML = 'Its just a stupid cookie to boder you :). <button class="btn btn--close-cookie">Got it</button>'
+header.prepend(message)
+// header.append(message)
+// header.append(message.cloneNode(true))
+// header.append(message.cloneNode())
+// header.before(message);
+// header.after(message);
+document.querySelector(".btn--close-cookie").addEventListener("click", () => {
+  message.remove();
+})
