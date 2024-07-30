@@ -58,8 +58,8 @@ message.style.width = "105%"
 
 message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px"
 
-document.documentElement.style.setProperty('--color-primary', 'orangered')
-document.documentElement.style.setProperty("--color-primary-darker", "orange")
+// document.documentElement.style.setProperty('--color-primary', 'orangered')
+// document.documentElement.style.setProperty("--color-primary-darker", "orange")
 
 const logo = document.querySelector(".nav__logo");
 // console.log(logo.className);
@@ -70,7 +70,17 @@ const twitter = document.querySelector(".twitter-link");
 
 // console.log(twitter.href);
 // console.log(twitter.getAttribute("href"));
-logo.classList.add("aj", "kj");
-logo.classList.remove("kj");
-console.log(logo.classList.contains("aj"));
-console.log(logo.className);
+
+const btnscroll = document.querySelector(".btn--scroll-to");
+const section1 = document.getElementById("section--1");
+ 
+btnscroll.addEventListener("click", (e) => {
+  // old way of scrolling to that view
+  // const s1coords = section1.getBoundingClientRect();
+  // window.scroll({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: "smooth"
+  // })
+  section1.scrollIntoView({ behavior: "smooth" });
+})
