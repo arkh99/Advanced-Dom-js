@@ -85,16 +85,35 @@ btnscroll.addEventListener("click", (e) => {
   section1.scrollIntoView({ behavior: "smooth" });
 })
 
-const h1 = document.querySelector("h1");
+// const h1 = document.querySelector("h1");
 
-const h1Alert = (e) => {
-  alert("you are reading h1");
-}
-h1.addEventListener("mouseenter", h1Alert)
-setTimeout(() => h1.removeEventListener("mouseenter", h1Alert), 3000)
+// const h1Alert = (e) => {
+//   alert("you are reading h1");
+// }
+// h1.addEventListener("mouseenter", h1Alert)
+// setTimeout(() => h1.removeEventListener("mouseenter", h1Alert), 3000)
 
 
 // old way of adding event listener
 // h1.onmouseenter = (e) => {
 //   alert("you are reading h1- on event property")
 // }
+
+
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () => `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`
+
+
+document.querySelector(".nav__link").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+  // e.stopPropagation();
+})
+
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+})
+
+document.querySelector(".nav").addEventListener("click", function (e) {
+  this.style.backgroundColor = randomColor();
+})
