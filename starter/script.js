@@ -40,7 +40,7 @@ const allButtons = document.getElementsByTagName("button")
 const message = document.createElement("div");
 message.classList.add("cookie-message");
 message.innerHTML = 'Its just a stupid cookie to boder you :). <button class="btn btn--close-cookie">Got it</button>'
-header.prepend(message)
+header.append(message)
 // header.append(message)
 // header.append(message.cloneNode(true))
 // header.append(message.cloneNode())
@@ -49,3 +49,28 @@ header.prepend(message)
 document.querySelector(".btn--close-cookie").addEventListener("click", () => {
   message.remove();
 })
+message.style.backgroundColor = "#37383d";
+message.style.width = "105%"
+
+// retrieving the computed style of an element cause the document.style only retrieve or manipulate the inline styles
+// console.log(message.style.width);
+// console.log(Number.parseFloat(getComputedStyle(message).height), 10);
+
+message.style.height = Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px"
+
+document.documentElement.style.setProperty('--color-primary', 'orangered')
+document.documentElement.style.setProperty("--color-primary-darker", "orange")
+
+const logo = document.querySelector(".nav__logo");
+// console.log(logo.className);
+// retrieving custom property 
+// console.log(logo.name);
+logo.setAttribute("company", "bankist");
+const twitter = document.querySelector(".twitter-link");
+
+// console.log(twitter.href);
+// console.log(twitter.getAttribute("href"));
+logo.classList.add("aj", "kj");
+logo.classList.remove("kj");
+console.log(logo.classList.contains("aj"));
+console.log(logo.className);
