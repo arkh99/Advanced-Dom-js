@@ -1,13 +1,17 @@
 'use strict';
 
-///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const header = document.querySelector(".header")
+const btnscroll = document.querySelector(".btn--scroll-to");
+const section1 = document.getElementById("section--1"); 
+
+
+///////////////////////////////////////
+// Modal window
+
 
 const openModal = function (e) {
   e.preventDefault();
@@ -32,6 +36,46 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+// scrolling effect 
+btnscroll.addEventListener("click", (e) => {
+  // old way of scrolling to that view
+
+  // const s1coords = section1.getBoundingClientRect();
+  // window.scroll({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: "smooth"
+  // })
+  section1.scrollIntoView({ behavior: "smooth" });
+})
+
+// page navigation
+// document.querySelectorAll(".nav__link").forEach(function (el) {
+//   el.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute("href");
+//     document.querySelector(id).scrollIntoView({behavior: "smooth"})
+//   })
+// })
+
+// with event deligation
+// 1. add event listener to the common parent element
+// 2. detemine what element originated the event
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    console.log("clicked");
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({behavior: "smooth"})
+  }
+})
+
+
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
 
 const allSections = document.querySelectorAll(".section");
 document.getElementById("sectio--1")
@@ -71,19 +115,7 @@ const twitter = document.querySelector(".twitter-link");
 // console.log(twitter.href);
 // console.log(twitter.getAttribute("href"));
 
-const btnscroll = document.querySelector(".btn--scroll-to");
-const section1 = document.getElementById("section--1");
- 
-btnscroll.addEventListener("click", (e) => {
-  // old way of scrolling to that view
-  // const s1coords = section1.getBoundingClientRect();
-  // window.scroll({
-  //   left: s1coords.left + window.pageXOffset,
-  //   top: s1coords.top + window.pageYOffset,
-  //   behavior: "smooth"
-  // })
-  section1.scrollIntoView({ behavior: "smooth" });
-})
+
 
 // const h1 = document.querySelector("h1");
 
@@ -100,20 +132,21 @@ btnscroll.addEventListener("click", (e) => {
 // }
 
 
-const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+// const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-const randomColor = () => `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`
+// const randomColor = () => `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`
 
 
-document.querySelector(".nav__link").addEventListener("click", function (e) {
-  this.style.backgroundColor = randomColor();
-  // e.stopPropagation();
-})
+// document.querySelector(".nav__link").addEventListener("click", function (e) {
+//   this.style.backgroundColor = randomColor();
+//   // e.stopPropagation();
+// })
 
-document.querySelector(".nav__links").addEventListener("click", function (e) {
-  this.style.backgroundColor = randomColor();
-})
+// document.querySelector(".nav__links").addEventListener("click", function (e) {
+//   this.style.backgroundColor = randomColor();
+// })
 
-document.querySelector(".nav").addEventListener("click", function (e) {
-  this.style.backgroundColor = randomColor();
-})
+// document.querySelector(".nav").addEventListener("click", function (e) {
+//   this.style.backgroundColor = randomColor();
+// })
+
