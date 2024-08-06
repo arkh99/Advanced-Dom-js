@@ -150,3 +150,22 @@ const twitter = document.querySelector(".twitter-link");
 //   this.style.backgroundColor = randomColor();
 // })
 
+const h1 = document.querySelector("h1");
+// DOM traversing
+// going downwards child elements
+// console.log(h1.querySelectorAll(".highlight"));
+// console.log(h1.childNodes);
+// console.log(h1.children);
+// console.log();
+
+h1.firstElementChild.style.color = "white";
+h1.lastElementChild.style.color = "orange";
+
+// traversing upwards parents
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
+// console.log(h1.closest(".header"));
+
+// traversing through direct siblings 
+console.log(h1.nextElementSibling);
+console.log(h1.previousElementSibling);
