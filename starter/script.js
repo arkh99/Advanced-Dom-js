@@ -151,6 +151,7 @@ const twitter = document.querySelector(".twitter-link");
 // })
 
 const h1 = document.querySelector("h1");
+
 // DOM traversing
 // going downwards child elements
 // console.log(h1.querySelectorAll(".highlight"));
@@ -166,6 +167,11 @@ h1.lastElementChild.style.color = "orange";
 // console.log(h1.parentElement);
 // console.log(h1.closest(".header"));
 
-// traversing through direct siblings 
-console.log(h1.nextElementSibling);
-console.log(h1.previousElementSibling);
+// traversing through direct siblings
+// console.log(h1.nextElementSibling);
+// console.log(h1.previousElementSibling);
+// [...header.parentElement.children].forEach(function (el) {
+//   if (el !== header) {
+//     el.style.backgroundColor = "orange"
+//   }
+// });
