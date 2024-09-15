@@ -92,99 +92,11 @@ tabsContainer.addEventListener("click", function (e) {
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 ///////////////////////////////////////////
-
 const allSections = document.querySelectorAll(".section");
 document.getElementById("sectio--1");
 const allButtons = document.getElementsByTagName("button");
 
-const message = document.createElement("div");
-message.classList.add("cookie-message");
-message.innerHTML =
-  'Its just a stupid cookie to boder you :). <button class="btn btn--close-cookie">Got it</button>';
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.innerHTML = 'here is some cookie message <button class= "btn btn--close-cookie">Got it!</button>'
 header.append(message);
-// header.append(message)
-// header.append(message.cloneNode(true))
-// header.append(message.cloneNode())
-// header.before(message);
-// header.after(message);
-document.querySelector(".btn--close-cookie").addEventListener("click", () => {
-  message.remove();
-});
-message.style.backgroundColor = "#37383d";
-message.style.width = "105%";
-
-// retrieving the computed style of an element cause the document.style only retrieve or manipulate the inline styles
-// console.log(message.style.width);
-// console.log(Number.parseFloat(getComputedStyle(message).height), 10);
-
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
-
-// document.documentElement.style.setProperty('--color-primary', 'orangered')
-// document.documentElement.style.setProperty("--color-primary-darker", "orange")
-
-const logo = document.querySelector(".nav__logo");
-// console.log(logo.className);
-// retrieving custom property
-// console.log(logo.name);
-logo.setAttribute("company", "bankist");
-const twitter = document.querySelector(".twitter-link");
-
-// console.log(twitter.href);
-// console.log(twitter.getAttribute("href"));
-
-// const h1 = document.querySelector("h1");
-
-// const h1Alert = (e) => {
-//   alert("you are reading h1");
-// }
-// h1.addEventListener("mouseenter", h1Alert)
-// setTimeout(() => h1.removeEventListener("mouseenter", h1Alert), 3000)
-
-// old way of adding event listener
-// h1.onmouseenter = (e) => {
-//   alert("you are reading h1- on event property")
-// }
-
-// const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
-// const randomColor = () => `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`
-
-// document.querySelector(".nav__link").addEventListener("click", function (e) {
-//   this.style.backgroundColor = randomColor();
-//   // e.stopPropagation();
-// })
-
-// document.querySelector(".nav__links").addEventListener("click", function (e) {
-//   this.style.backgroundColor = randomColor();
-// })
-
-// document.querySelector(".nav").addEventListener("click", function (e) {
-//   this.style.backgroundColor = randomColor();
-// })
-
-const h1 = document.querySelector("h1");
-
-// DOM traversing
-// going downwards child elements
-// console.log(h1.querySelectorAll(".highlight"));
-// console.log(h1.childNodes);
-// console.log(h1.children);
-// console.log();
-
-h1.firstElementChild.style.color = "white";
-h1.lastElementChild.style.color = "orange";
-
-// traversing upwards parents
-// console.log(h1.parentNode);
-// console.log(h1.parentElement);
-// console.log(h1.closest(".header"));
-
-// traversing through direct siblings
-// console.log(h1.nextElementSibling);
-// console.log(h1.previousElementSibling);
-// [...header.parentElement.children].forEach(function (el) {
-//   if (el !== header) {
-//     el.style.backgroundColor = "orange"
-//   }
-// });
