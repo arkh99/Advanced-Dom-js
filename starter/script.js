@@ -69,6 +69,7 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
   }
 });
 
+//test
 // tabbed component
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
