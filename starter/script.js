@@ -100,3 +100,14 @@ const message = document.createElement('div');
 message.classList.add('cookie-message');
 message.innerHTML = 'here is some cookie message <button class= "btn btn--close-cookie">Got it!</button>'
 header.append(message);
+document.querySelector(".btn--close-cookie").addEventListener("click", function () {
+  message.remove();
+});
+// changing style with js
+message.style.backgroundColor = "#37383d"
+message.style.width = "110%"
+
+message.style.height = Number.parseInt(getComputedStyle(message).height) + 20 + 'px';
+
+// accessing the root in css  
+// document.documentElement.style.setProperty("--color-primary", "red")
